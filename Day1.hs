@@ -16,7 +16,7 @@ countIncreases window depths = countTrue $ zipWith sumAndComp windows (tail wind
   where
     windows = if window == 1
               then map (: []) depths
-              else zipAsLists (take window $ tails depths)
+              else zipLists (take window $ tails depths)
 
 countTrue : [Bool] -> Int
 countTrue = length . filter id
@@ -25,8 +25,8 @@ sumAndComp :: [Int] -> [Int] -> Bool
 sumAndComp first second = 
   sum first < sum second
 
-zipAsLists :: [[a]] -> [[a]]
-zipAsLists = foldr cons []
+zipLists :: [[a]] -> [[a]]
+zipLists = foldr cons []
   where
     cons :: [a] -> [[a]] -> [[a]]
     cons xs [] = [xs]
