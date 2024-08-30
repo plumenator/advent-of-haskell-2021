@@ -18,7 +18,7 @@ countIncreases window depths = countTrue $ zipWith sumAndComp windows (tail wind
               then map (: []) depths
               else zipLists (take window $ tails depths)
 
-countTrue : [Bool] -> Int
+countTrue :: [Bool] -> Int
 countTrue = length . filter id
 
 sumAndComp :: [Int] -> [Int] -> Bool

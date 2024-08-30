@@ -1,3 +1,1 @@
-run = ["runhaskell", "Main.hs"]
-
-entrypoint = "Main.hs"
+run = ["runhaskell", "Day1Part2.hs"]
